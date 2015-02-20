@@ -74,7 +74,13 @@ class Registry {
         require_once('objects/' . $object . '.class.php');
         self::$objects[ $key ] = new $object( self::$instance );
     }
-     
+
+    public function storeCoreObjects()
+    {
+      $this->storeObject('database', 'db' );
+      $this->storeObject('template', 'template' );
+    }
+
     /**
      * получение объекта из нашего реестра
      * @param String $key the array key
