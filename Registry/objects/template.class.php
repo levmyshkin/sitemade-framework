@@ -194,7 +194,7 @@ class template {
 
   public function parseTitle()
   {
-    $newContent = str_replace('<title>', '<title>'. $this->$page->getTitle(), $this->page->getContent() );
+    $newContent = str_replace('<title>', '<title>'. $this->page->getTitle(), $this->page->getContent() );
     $this->page->setContent( $newContent );
   }
 

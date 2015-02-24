@@ -69,15 +69,15 @@ class Registry {
      * @param String $key the key for the array
      * @return void
      */
-    public function storeObject( $object, $key )
+    public static function storeObject( $object, $key )
     {
-        require_once('objects/' . $object . '.class.php');
+        require_once('Registry/objects/' . $object . '.class.php');
         self::$objects[ $key ] = new $object( self::$instance );
     }
 
     public function storeCoreObjects()
     {
-      $this->storeObject('database', 'db' );
+      $this->storeObject('db', 'db' );
       $this->storeObject('template', 'template' );
     }
 
@@ -86,7 +86,7 @@ class Registry {
      * @param String $key the array key
      * @return object
      */
-    public function getObject( $key )
+    public static function getObject( $key )
     {
         if( is_object ( self::$objects[ $key ] ) )
         {
