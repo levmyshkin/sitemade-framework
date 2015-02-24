@@ -1,0 +1,17 @@
+Index: Registry/objects/db.class.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Registry/objects/db.class.php	(revision b1ffa3bbfce4e95ace7ed735e9412e9332e17d50)
++++ Registry/objects/db.class.php	(revision )
+@@ -4,7 +4,7 @@
+  * Управление БД
+  * Предоставляет небольшую абстракцию от БД
+  */
+-class database {
++class db {
+ 
+   /**
+    * Позволяет множественное подключение к БД
+\ No newline at end of file

@@ -1,0 +1,36 @@
+Index: Registry/registry.class.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Registry/registry.class.php	(revision b1ffa3bbfce4e95ace7ed735e9412e9332e17d50)
++++ Registry/registry.class.php	(revision )
+@@ -69,15 +69,15 @@
+      * @param String $key the key for the array
+      * @return void
+      */
+-    public function storeObject( $object, $key )
++    public static function storeObject( $object, $key )
+     {
+-        require_once('objects/' . $object . '.class.php');
++        require_once('Registry/objects/' . $object . '.class.php');
+         self::$objects[ $key ] = new $object( self::$instance );
+     }
+ 
+     public function storeCoreObjects()
+     {
+-      $this->storeObject('database', 'db' );
++      $this->storeObject('db', 'db' );
+       $this->storeObject('template', 'template' );
+     }
+ 
+@@ -86,7 +86,7 @@
+      * @param String $key the array key
+      * @return object
+      */
+-    public function getObject( $key )
++    public static function getObject( $key )
+     {
+         if( is_object ( self::$objects[ $key ] ) )
+         {
+\ No newline at end of file
